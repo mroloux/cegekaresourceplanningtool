@@ -1,0 +1,19 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+<h1>Project ${project.naam}</h1>
+
+<form method="POST" action="wijzig">
+	<div class="formField">
+		<label for="naam">naam</label>
+		<input type="text" name="project.naam" id="naam" value="${project.naam}" />
+		#{ifError "project.naam"}
+			#{error "project.naam" /}
+		#{/ifError}
+	</div>
+	<div class="formField">
+		<label for="locatie">locatie</label>
+		<input type="text" name="project.locatie" id="locatie" value="${project.locatie}" />
+	</div>
+	<input type="submit" value="Wijzigen" />
+</form>

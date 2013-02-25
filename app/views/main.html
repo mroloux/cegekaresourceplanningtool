@@ -11,6 +11,14 @@
         #{get 'moreScripts' /}
     </head>
     <body>
+	    #{if flash.contains("boodschap")}
+			${flash.get("boodschap")}
+		#{/if}
+	
+		#{ifErrors}
+			<div>Het formulier bevat fouten.</div>
+		#{/ifErrors}
+		
         #{doLayout /}
     </body>
 </html>

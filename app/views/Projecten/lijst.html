@@ -1,0 +1,12 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+<h1>Lijst projecten</h1>
+#{list projecten}
+	<div>
+		#{a @Projecten.toon(_)}
+		${_.naam}
+		#{/a}
+		${_.locatie}
+	</div>
+#{/list}

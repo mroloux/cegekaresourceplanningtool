@@ -1,26 +1,4 @@
 #{extends 'main.html' /}
 #{set title:'Home' /}
 
-#{if flash.contains("boodschap")}
-	${flash.get("boodschap")}
-#{/if}
-
-#{ifErrors}
-	<div>Het formulier bevat fouten.</div>
-#{/ifErrors}
-
-<h1>Nieuw project</h1>
-<form method="POST">
-	<div class="formField">
-		<label for="naam">naam</label>
-		<input type="text" name="naam" id="naam" />
-		#{ifError "naam"}
-			#{error "naam" /}
-		#{/ifError}
-	</div>
-	<div class="formField">
-		<label for="locatie">locatie</label>
-		<input type="text" name="locatie" id="locatie" value="${flash.locatie}" />
-	</div>
-	<input type="submit" value="Toevoegen" />
-</form>
+#{welcome /}
